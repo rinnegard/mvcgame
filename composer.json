@@ -5,7 +5,7 @@
     "autoload": {
         "psr-4": {
             "Mos\\": "src/",
-            "Dbwebb\\": "src/"
+            "viri19\\": "src/"
         },
         "files": [
             "src/functions.php"
