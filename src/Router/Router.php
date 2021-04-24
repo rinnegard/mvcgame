@@ -70,6 +70,14 @@ class Router
             $_SESSION["output"] = $_POST["content"] ?? null;
             redirectTo(url("/form/view"));
             return;
+        } else if ($method === "GET" && $path === "/game/21") {
+            $data = [
+                "header" => "21",
+                "message" => "21 Dice game",
+            ];
+            $body = renderView("layout/21.php", $data);
+            sendResponse($body);
+            return;
         }
 
         $data = [

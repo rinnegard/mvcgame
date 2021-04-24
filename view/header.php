@@ -27,7 +27,8 @@ use function Mos\Functions\url;
         <a href="<?= url("/twig") ?>">Twig view</a> |
         <a href="<?= url("/some/where") ?>">some/where</a> |
         <a href="<?= url("/no/such/path") ?>">Show 404 example</a> |
-        <a href="<?= url("/form/view") ?>">Form view</a>
+        <a href="<?= url("/form/view") ?>">Form view</a> |
+        <a href="<?= url("/game/21") ?>">Play 21</a>
     </nav>
 </header>
 <main>
