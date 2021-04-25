@@ -70,17 +70,25 @@ class Router
             $_SESSION["output"] = $_POST["content"] ?? null;
             redirectTo(url("/form/view"));
             return;
-        } else if ($method === "GET" && $path === "/game/21") {
+        } else if ($method === "GET" && $path === "/game/play21") {
             if (!isset($_SESSION["game"])) {
                 $_SESSION["game"] = new \viri19\Dice\Game();
             }
             $_SESSION["game"]->play();
             return;
-        } else if ($method === "POST" && $path === "/game/21") {
+        } else if ($method === "POST" && $path === "/game/play21") {
             if (!isset($_SESSION["game"])) {
-                $_SESSION["game"] = new \viri19\Dice\Game();
+                $_SESSION["game"] = new \viri19\Dice\Game((int)$_POST["handsize"]);
             }
             $_SESSION["game"]->play();
+            return;
+        } else if ($method === "GET" && $path === "/game/start21") {
+            $data = [
+                "header" => "Dice 21!",
+                "message" => "Try to get to 21! But don't go over!",
+            ];
+            $body = renderView("layout/start21.php", $data);
+            sendResponse($body);
             return;
         }
 

@@ -79,7 +79,7 @@ class Game
             $this->enemyWins = 0;
         }
 
-        $body = renderView("layout/21.php", $data);
+        $body = renderView("layout/play21.php", $data);
         sendResponse($body);
     }
 

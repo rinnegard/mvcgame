@@ -35,19 +35,8 @@ var_dump($_POST);
 
 <?php if (isset($winner)): ?>
     <p><?= $winner ?></p>
-    <form  action="" method="post">
+    <form  action="play21" method="post">
         <input type="submit" name="keepPlaying" value="Keep Playing">
         <input type="submit" name="restart" value="Restart">
     </form>
 <?php endif; ?>
-
-
-
-    <!-- <form  action="" method="post">
-        <p>How many dice?</p>
-        <input type="radio" name="count" value="1">
-        <label for="1">1</label>
-        <input type="radio" name="count" value="2">
-        <label for="2">2</label>
-        <input type="submit" name="submit" value="Submit">
-    </form> -->
