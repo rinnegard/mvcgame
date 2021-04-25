@@ -37,7 +37,7 @@ FILE: C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\GraphicalDice.php
 -------------------------------------------------------------------------
 FOUND 1 ERROR AFFECTING 1 LINE
 -------------------------------------------------------------------------
- 9 | ERROR | [x] Opening brace should be on a new line
+ 10 | ERROR | [x] Opening brace should be on a new line
 -------------------------------------------------------------------------
 PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 -------------------------------------------------------------------------
@@ -53,5 +53,5 @@ FOUND 2 ERRORS AFFECTING 2 LINES
 PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 -------------------------------------------------------------------------
 
-Time: 667ms; Memory: 6MB
+Time: 428ms; Memory: 6MB
 

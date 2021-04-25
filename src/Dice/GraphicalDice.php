@@ -6,9 +6,9 @@ namespace viri19\Dice;
 
 class GraphicalDice extends Dice
 {
-    public function __construct() {
-        parent::__construct();
-        $this->sides = 6;
+
+    public function __construct($sides = 6) {
+        parent::__construct(6);
     }
 
     public function getImageClass()
