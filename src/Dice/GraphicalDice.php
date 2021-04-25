@@ -7,7 +7,8 @@ namespace viri19\Dice;
 class GraphicalDice extends Dice
 {
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct(6);
     }
 

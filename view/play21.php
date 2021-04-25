@@ -18,14 +18,14 @@ $message = $message ?? null;
 <p>Player wins: <?= $_SESSION["game"]->getPlayerWins(); ?> | Enemy wins: <?= $_SESSION["game"]->getEnemyWins(); ?></p>
 
 
-<?php if (isset($_SESSION["game"]) && !isset($winner)): ?>
+<?php if (isset($_SESSION["game"]) && !isset($winner)) : ?>
     <form  action="" method="post">
         <input type="submit" name="roll" value="Roll">
         <input type="submit" name="stay" value="Stay">
     </form>
 <?php endif; ?>
 
-<?php if (isset($winner)): ?>
+<?php if (isset($winner)) : ?>
     <p><?= $winner ?></p>
     <form  action="play21" method="post">
         <input type="submit" name="keepPlaying" value="Keep Playing">

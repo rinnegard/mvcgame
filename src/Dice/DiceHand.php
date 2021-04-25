@@ -13,7 +13,7 @@ class DiceHand
     public function __construct(int $numberOfDie = 1)
     {
         $this->numberOfDie = $numberOfDie;
-        for ($i=0; $i < $numberOfDie; $i++) {
+        for ($i = 0; $i < $numberOfDie; $i++) {
             $this->dice[$i] = new Dice(6);
         }
     }
@@ -21,7 +21,7 @@ class DiceHand
     public function roll(): void
     {
         $this->lastSum = 0;
-        for ($i=0; $i < $this->numberOfDie; $i++) {
+        for ($i = 0; $i < $this->numberOfDie; $i++) {
             $this->dice[$i]->roll();
             $this->lastSum += $this->dice[$i]->getFace();
         }
