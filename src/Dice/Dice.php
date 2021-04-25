@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace viri19\Router;
+namespace viri19\Dice;
 
 
 /**
@@ -11,9 +11,9 @@ namespace viri19\Router;
 class Dice
 {
     private int $face;
-    private int $sides = 6;
+    private int $sides;
 
-    public function __construct($sides)
+    public function __construct($sides = 6)
     {
         $this->sides = $sides;
     }
@@ -23,7 +23,7 @@ class Dice
         $this->face = rand(1, $this->sides);
     }
 
-    public function getFace(): void
+    public function getFace(): int
     {
         return $this->face;
     }
