@@ -67,11 +67,16 @@ class Game
         $data["player"] = $this->playerDiceHand->getLastSum();
         $data["enemy"] = $this->enemyDiceHand->getLastSum();
 
-        if (isset($_POST["keepPlaying"])) {
+        if (isset($_POST["keepPlaying"]) || isset($_POST["restart"])) {
             $this->playerSum = 0;
             $this->enemySum = 0;
             $data["player"] = 0;
             $data["enemy"] = 0;
+        }
+
+        if (isset($_POST["restart"])) {
+            $this->playerWins = 0;
+            $this->enemyWins = 0;
         }
 
 

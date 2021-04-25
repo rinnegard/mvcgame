@@ -15,7 +15,7 @@ var_dump($_POST);
 
 <p><?= $message ?></p>
 
-<p>Latest roll: <?= $player ?></p>
+<p>Latest player roll: <?= $player ?></p>
 
 <p> Player total: <?= $_SESSION["game"]->getPlayerSum(); ?></p>
 
