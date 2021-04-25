@@ -24,9 +24,9 @@ class DiceHand
 
     public function roll(): void
     {
+        $this->lastSum = 0;
         for ($i=0; $i < $this->numberOfDie; $i++) {
             $this->dice[$i]->roll();
-            $this->lastSum = 0;
             $this->lastSum += $this->dice[$i]->getFace();
         }
     }
