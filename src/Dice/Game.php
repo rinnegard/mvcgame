@@ -21,7 +21,6 @@ class Game
     private int $enemyWins = 0;
     private int $playerSum = 0;
     private int $enemySum = 0;
-    private string $winner = "";
 
     const WINMESSAGE = "You win! Well played!";
     const LOSEMESSAGE = "You lost! Better luck next time!";

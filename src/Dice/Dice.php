@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace viri19\Dice;
 
-
-/**
- * Class Router.
- */
 class Dice
 {
     private int $face = 0;
