@@ -16,7 +16,7 @@ var_dump($_POST);
 <p><?= $message ?></p>
 
 <form  action="play21" method="post">
-    <p>How many dice?</p>
+    <p>How many dice do you want per throw?</p>
     <input type="radio" name="handsize" value=1>
     <label for="1">1</label>
     <input type="radio" name="handsize" value=2>

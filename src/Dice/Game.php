@@ -21,8 +21,10 @@ class Game
     private int $enemyWins = 0;
     private int $playerSum = 0;
     private int $enemySum = 0;
-    private bool $isGameOver = False;
     private string $winner = "";
+
+    const WINMESSAGE = "You win! Well played!";
+    const LOSEMESSAGE = "You lost! Better luck next time!";
 
     public function __construct(int $numberOfDie = 2)
     {
@@ -34,20 +36,18 @@ class Game
     {
         $data = [
             "header" => "Play 21!",
-            "message" => "21 Dice game",
+            "message" => "Try to get as close to 21 as you can. But remember to not go over!",
         ];
-
-
 
         if (isset($_POST["roll"])) {
             $this->playerDiceHand->roll();
             $this->playerSum += $this->playerDiceHand->getLastSum();
 
             if ($this->playerSum === 21) {
-                $data["winner"] = "player";
+                $data["winner"] = self::WINMESSAGE;
                 $this->playerWins += 1;
             } elseif ($this->playerSum > 21) {
-                $data["winner"] = "enemy";
+                $data["winner"] = self::LOSEMESSAGE;
                 $this->enemyWins += 1;
             }
         }
@@ -56,10 +56,10 @@ class Game
             $this->enemyRoll();
 
             if ($this->enemySum > 21) {
-                $data["winner"] = "player";
+                $data["winner"] = self::WINMESSAGE;
                 $this->playerWins += 1;
             } elseif ($this->enemySum === 21 || $this->enemySum > $this->playerSum) {
-                $data["winner"] = "enemy";
+                $data["winner"] = self::LOSEMESSAGE;
                 $this->enemyWins += 1;
             }
         }

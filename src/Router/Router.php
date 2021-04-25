@@ -83,6 +83,9 @@ class Router
             $_SESSION["game"]->play();
             return;
         } else if ($method === "GET" && $path === "/game/start21") {
+            if (isset($_SESSION["game"])) {
+                $_SESSION["game"] = null;
+            }
             $data = [
                 "header" => "Dice 21!",
                 "message" => "Try to get to 21! But don't go over!",

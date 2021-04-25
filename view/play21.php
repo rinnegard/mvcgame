@@ -9,8 +9,6 @@ declare(strict_types=1);
 $header = $header ?? null;
 $message = $message ?? null;
 
-var_dump($_POST);
-
 ?><h1><?= $header ?></h1>
 
 <p><?= $message ?></p>
@@ -26,11 +24,9 @@ var_dump($_POST);
 
 <?php if (isset($_SESSION["game"]) && !isset($winner)): ?>
     <form  action="" method="post">
-        <input type="submit" name="roll" value="roll">
-        <input type="submit" name="stay" value="stay">
+        <input type="submit" name="roll" value="Roll">
+        <input type="submit" name="stay" value="Stay">
     </form>
-
-
 <?php endif; ?>
 
 <?php if (isset($winner)): ?>
