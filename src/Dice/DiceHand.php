@@ -11,7 +11,7 @@ namespace viri19\Dice;
 class DiceHand
 {
     private int $numberOfDie;
-    private int $sum = 0;
+    private int $lastSum = 0;
     private array $dice;
 
     public function __construct(int $numberOfDie = 1)
@@ -26,13 +26,14 @@ class DiceHand
     {
         for ($i=0; $i < $this->numberOfDie; $i++) {
             $this->dice[$i]->roll();
-            $this->sum += $this->dice[$i]->getFace();
+            $this->lastSum = 0;
+            $this->lastSum += $this->dice[$i]->getFace();
         }
     }
 
-    public function getSum(): int
+    public function getLastSum(): int
     {
-        return $this->sum;
+        return $this->lastSum;
     }
 
     public function getNumOfDie(): int

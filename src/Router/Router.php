@@ -71,12 +71,16 @@ class Router
             redirectTo(url("/form/view"));
             return;
         } else if ($method === "GET" && $path === "/game/21") {
-            $data = [
-                "header" => "21",
-                "message" => "21 Dice game",
-            ];
-            $body = renderView("layout/21.php", $data);
-            sendResponse($body);
+            if (!isset($_SESSION["game"])) {
+                $_SESSION["game"] = new \viri19\Dice\Game();
+            }
+            $_SESSION["game"]->play();
+            return;
+        } else if ($method === "POST" && $path === "/game/21") {
+            if (!isset($_SESSION["game"])) {
+                $_SESSION["game"] = new \viri19\Dice\Game();
+            }
+            $_SESSION["game"]->play();
             return;
         }
 
