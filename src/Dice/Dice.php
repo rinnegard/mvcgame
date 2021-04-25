@@ -10,7 +10,7 @@ namespace viri19\Dice;
  */
 class Dice
 {
-    private int $face;
+    private int $face = 0;
     private int $sides;
 
     public function __construct($sides = 6)

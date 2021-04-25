@@ -9,10 +9,18 @@ declare(strict_types=1);
 $header = $header ?? null;
 $message = $message ?? null;
 
-$dice = new \viri19\Dice\Dice();
-$dice->roll();
+// $hand = new \viri19\Dice\DiceHand(20);
+// $hand->roll();
+
+$die = new \viri19\Dice\Dice(6);
+$die->roll();
+
+$hand = new \viri19\Dice\DiceHand(2);
+$hand->roll();
 
 ?><h1><?= $header ?></h1>
 
 <p><?= $message ?></p>
-<p><?= $dice->getFace(); ?></p>
+
+<p> One die: <?= $die->getFace(); ?></p>
+<p> Hand: <?= $hand->getSum(); ?></p>
