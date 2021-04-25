@@ -1,1 +1,7 @@
-C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:21	The method dispatch() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:24	Avoid unused private fields such as '$winner'.
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:31	Missing class import via use statement (line '31', column '37').
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:32	Missing class import via use statement (line '32', column '36').
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:35	The method play() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:21	The method dispatch() has a Cyclomatic Complexity of 26. The configured cyclomatic complexity threshold is 10.
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:75	Missing class import via use statement (line '75', column '41').
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:81	Missing class import via use statement (line '81', column '41').
