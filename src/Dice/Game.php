@@ -31,7 +31,7 @@ class Game
         $this->enemyDiceHand = new \viri19\Dice\DiceHand($numberOfDie);
     }
 
-    public function play(): void
+    public function play(): array
     {
         $data = [
             "header" => "Play 21!",
@@ -78,8 +78,9 @@ class Game
             $this->enemyWins = 0;
         }
 
-        $body = renderView("layout/play21.php", $data);
-        sendResponse($body);
+        // $body = renderView("layout/play21.php", $data);
+        // sendResponse($body);
+        return $data;
     }
 
     public function getPlayerSum(): int
