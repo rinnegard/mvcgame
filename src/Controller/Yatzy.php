@@ -34,19 +34,13 @@ class Yatzy
 
     public function init(): ResponseInterface
     {
-        // $data = [
-        //     "header" => "Play 21!",
-        //     "message" => "Try to get as close to 21 as you can. But remember to not go over!",
-        //     "action" => url("/game/play21"),
-        //     "output" => $_SESSION["output"] ?? null,
-        // ];
 
-        if (!isset($_SESSION["game"])) {
-            $_SESSION["game"] = new \viri19\Dice\Game();
+        if (!isset($_SESSION["yatzy"])) {
+            $_SESSION["yatzy"] = new \viri19\Dice\Yatzy();
         }
-        $data = $_SESSION["game"]->play();
+        $data = $_SESSION["yatzy"]->play();
 
-        $body = renderView("layout/play21.php", $data);
+        $body = renderView("layout/yatzy.php", $data);
 
         $psr17Factory = new Psr17Factory();
         return $psr17Factory
