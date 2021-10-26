@@ -36,4 +36,14 @@ class DiceHand
     {
         return $this->numberOfDie;
     }
+
+    public function rollOnlyOne(int $die): void
+    {
+        $this->dice[$die]->roll();
+    }
+
+    public function getOnlyOne(int $die): object
+    {
+        return $this->dice[$die];
+    }
 }

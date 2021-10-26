@@ -16,19 +16,13 @@ use function Mos\Functions\{
 class Yatzy
 {
     public $playerDiceHand;
-    public $enemyDiceHand;
-    private int $playerWins = 0;
-    private int $enemyWins = 0;
-    private int $playerSum = 0;
-    private int $enemySum = 0;
 
     const WINMESSAGE = "You win! Well played!";
     const LOSEMESSAGE = "You lost! Better luck next time!";
 
-    public function __construct(int $numberOfDie = 2)
+    public function __construct(int $numberOfDie = 5)
     {
         $this->playerDiceHand = new \viri19\Dice\DiceHand($numberOfDie);
-        $this->enemyDiceHand = new \viri19\Dice\DiceHand($numberOfDie);
     }
 
     public function play(): array
@@ -42,13 +36,6 @@ class Yatzy
             $this->playerDiceHand->roll();
             $this->playerSum += $this->playerDiceHand->getLastSum();
 
-            if ($this->playerSum === 21) {
-                $data["winner"] = self::WINMESSAGE;
-                $this->playerWins += 1;
-            } elseif ($this->playerSum > 21) {
-                $data["winner"] = self::LOSEMESSAGE;
-                $this->enemyWins += 1;
-            }
         }
 
         if (isset($_POST["stay"])) {
@@ -64,7 +51,6 @@ class Yatzy
         }
 
         $data["player"] = $this->playerDiceHand->getLastSum();
-        $data["enemy"] = $this->enemyDiceHand->getLastSum();
 
         if (isset($_POST["keepPlaying"]) || isset($_POST["restart"])) {
             $this->playerSum = 0;
