@@ -42,7 +42,7 @@ class DiceHand
         $this->dice[$die]->roll();
     }
 
-    public function getOnlyOne(int $die): object
+    public function getDie(int $die): object
     {
         return $this->dice[$die];
     }

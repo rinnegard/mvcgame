@@ -34,20 +34,6 @@ class Yatzy
 
         if (isset($_POST["roll"])) {
             $this->playerDiceHand->roll();
-            $this->playerSum += $this->playerDiceHand->getLastSum();
-
-        }
-
-        if (isset($_POST["stay"])) {
-            $this->enemyRoll();
-
-            if ($this->enemySum > 21) {
-                $data["winner"] = self::WINMESSAGE;
-                $this->playerWins += 1;
-            } elseif ($this->enemySum === 21 || $this->enemySum > $this->playerSum) {
-                $data["winner"] = self::LOSEMESSAGE;
-                $this->enemyWins += 1;
-            }
         }
 
         $data["player"] = $this->playerDiceHand->getLastSum();
@@ -72,6 +58,11 @@ class Yatzy
     public function getPlayerSum(): int
     {
         return $this->playerSum;
+    }
+
+    public function roll(): void
+    {
+        $playerDiceHand->roll();
     }
 
     public function getEnemySum(): int

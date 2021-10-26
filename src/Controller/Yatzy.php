@@ -34,6 +34,12 @@ class Yatzy
 
     public function init(): ResponseInterface
     {
+        $data = [
+            "header" => "Yatzy!!",
+            "message" => "Let's play!",
+            "action" => url("/yatzy"),
+            "output" => $_SESSION["output"] ?? null,
+        ];
 
         if (!isset($_SESSION["yatzy"])) {
             $_SESSION["yatzy"] = new \viri19\Dice\Yatzy();
