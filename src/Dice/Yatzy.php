@@ -16,6 +16,7 @@ use function Mos\Functions\{
 class Yatzy
 {
     public $playerDiceHand;
+    public array $savedDice = [];
 
     const WINMESSAGE = "You win! Well played!";
     const LOSEMESSAGE = "You lost! Better luck next time!";
@@ -31,6 +32,8 @@ class Yatzy
             "header" => "Play Yatzy!!",
             "message" => "Good luck!",
         ];
+
+        $this->playerDiceHand->roll();
 
         if (isset($_POST["roll"])) {
             $this->playerDiceHand->roll();
@@ -50,44 +53,18 @@ class Yatzy
             $this->enemyWins = 0;
         }
 
-        // $body = renderView("layout/play21.php", $data);
-        // sendResponse($body);
         return $data;
     }
 
-    public function getPlayerSum(): int
-    {
-        return $this->playerSum;
-    }
 
     public function roll(): void
     {
         $playerDiceHand->roll();
     }
 
-    public function getEnemySum(): int
+    public function show()
     {
-        return $this->enemySum;
+        return $this->playerDiceHand->getAllDice();
     }
 
-    public function getPlayerWins(): int
-    {
-        return $this->playerWins;
-    }
-
-    public function getEnemyWins(): int
-    {
-        return $this->enemyWins;
-    }
-
-    private function enemyRoll(): void
-    {
-        while ($this->enemySum < 21) {
-            $this->enemyDiceHand->roll();
-            $this->enemySum += $this->enemyDiceHand->getLastSum();
-            if ($this->enemySum > $this->playerSum) {
-                break;
-            }
-        }
-    }
 }

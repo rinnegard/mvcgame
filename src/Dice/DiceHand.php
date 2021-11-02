@@ -46,4 +46,9 @@ class DiceHand
     {
         return $this->dice[$die];
     }
+
+    public function getAllDice(): array
+    {
+        return $this->dice;
+    }
 }

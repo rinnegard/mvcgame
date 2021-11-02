@@ -11,8 +11,10 @@ $message = $message ?? null;
 ?><h1><?= $header ?></h1>
 
 <p><?= $message ?></p>
+<?php foreach ($die1 as $key => $value): ?>
+    <p><?= $value->getFace(); ?></p>
+<?php endforeach; ?>
 
-<p><?= $die1 ?></p>
 <form  action="" method="post">
     <p>I hope you know the rules!</p>
     <input type="submit" name="submit" value="Begin!">
