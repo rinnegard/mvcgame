@@ -51,4 +51,10 @@ class DiceHand
     {
         return $this->dice;
     }
+
+    public function removeDie(int $die): void
+    {
+       unset($this->dice[$die]);
+       array_values($this->dice);
+    }
 }

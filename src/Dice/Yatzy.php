@@ -33,7 +33,6 @@ class Yatzy
             "message" => "Good luck!",
         ];
 
-        $this->playerDiceHand->roll();
 
         if (isset($_POST["roll"])) {
             $this->playerDiceHand->roll();
@@ -41,11 +40,12 @@ class Yatzy
 
         $data["player"] = $this->playerDiceHand->getLastSum();
 
-        if (isset($_POST["keepPlaying"]) || isset($_POST["restart"])) {
-            $this->playerSum = 0;
-            $this->enemySum = 0;
-            $data["player"] = 0;
-            $data["enemy"] = 0;
+        if (isset($_POST["save"])) {
+            unset($_POST["save"]);
+            foreach ($_POST as $key => $value) {
+               array_push($this->savedDice, $value);
+               $this->playerDiceHand->removeDie(intval($key));
+           }
         }
 
         if (isset($_POST["restart"])) {
@@ -65,6 +65,11 @@ class Yatzy
     public function show()
     {
         return $this->playerDiceHand->getAllDice();
+    }
+
+    public function showSaved(): string
+    {
+        return json_encode($this->savedDice);
     }
 
 }
