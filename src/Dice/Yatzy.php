@@ -17,6 +17,7 @@ class Yatzy
 {
     public $playerDiceHand;
     public array $savedDice = [];
+    public int $turn = 0;
 
     const WINMESSAGE = "You win! Well played!";
     const LOSEMESSAGE = "You lost! Better luck next time!";
@@ -33,9 +34,14 @@ class Yatzy
             "message" => "Good luck!",
         ];
 
+        if ($this->turn >= 3) {
+            $data["winner"] = self::WINMESSAGE;
+            return $data;
+        }
+
 
         if (isset($_POST["roll"])) {
-            $this->playerDiceHand->roll();
+            $this->roll();
         }
 
         $data["player"] = $this->playerDiceHand->getLastSum();
@@ -59,7 +65,8 @@ class Yatzy
 
     public function roll(): void
     {
-        $playerDiceHand->roll();
+        $this->turn++;
+        $this->playerDiceHand->roll();
     }
 
     public function show()
@@ -71,5 +78,11 @@ class Yatzy
     {
         return json_encode($this->savedDice);
     }
+
+    public function getTurn(): int
+    {
+        return $this->turn;
+    }
+
 
 }

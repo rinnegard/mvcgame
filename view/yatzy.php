@@ -5,9 +5,10 @@ declare(strict_types=1);
 $header = $header ?? null;
 $message = $message ?? null;
 
- $_SESSION["yatzy"]->play();
+
  $die1 = $_SESSION["yatzy"]->show();
  $savedDie = $_SESSION["yatzy"]->showSaved();
+$turn = $_SESSION["yatzy"]->getTurn();
 
 ?><h1><?= $header ?></h1>
 
@@ -28,7 +29,20 @@ var_dump($_POST);
 </p>
 
 <p><?= $savedDie ?></p>
+<p><?= $turn ?></p>
 
+<?php if (!isset($winner)) : ?>
 <form  action="" method="post">
     <input type="submit" name="roll" value="Roll!">
 </form>
+<?php endif; ?>
+
+
+
+<?php if (isset($winner)) : ?>
+    <p><?= $winner ?></p>
+    <form  action="play21" method="post">
+        <input type="submit" name="keepPlaying" value="Keep Playing">
+        <input type="submit" name="restart" value="Restart">
+    </form>
+<?php endif; ?>
