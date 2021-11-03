@@ -20,8 +20,9 @@ class DiceHand
 
     public function roll(): void
     {
+        $this->dice = array_values($this->dice);
         $this->lastSum = 0;
-        for ($i = 0; $i < $this->numberOfDie; $i++) {
+        for ($i = 0; $i < count($this->dice); $i++) {
             $this->dice[$i]->roll();
             $this->lastSum += $this->dice[$i]->getFace();
         }
@@ -55,6 +56,5 @@ class DiceHand
     public function removeDie(int $die): void
     {
        unset($this->dice[$die]);
-       array_values($this->dice);
     }
 }
