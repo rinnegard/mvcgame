@@ -36,17 +36,19 @@ class Yatzy
             "message" => "Good luck!",
         ];
 
+
+
         if (isset($_POST["roll"])) {
-            if ($this->throws == 2) {
+            $this->roll();
+            if ($this->throws >= 3) {
                 $data["roundEnd"] = self::WINMESSAGE;
             }
-            $this->roll();
         }
 
         $data["player"] = $this->playerDiceHand->getLastSum();
 
         if (isset($_POST["save"])) {
-            if ($this->throws == 2) {
+            if ($this->throws >= 3) {
                 $data["roundEnd"] = self::WINMESSAGE;
             }
             unset($_POST["save"]);
@@ -61,6 +63,10 @@ class Yatzy
             $this->calcScore();
             $this->playerDiceHand = new \viri19\Dice\DiceHand(5);
             $this->savedDice = [];
+            $this->turn++;
+            if ($this->turn == 5) {
+                $data["gameover"] = self::LOSEMESSAGE;
+            }
         }
 
         return $data;

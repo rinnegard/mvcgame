@@ -6,8 +6,8 @@ $header = $header ?? null;
 $message = $message ?? null;
 
 
- $die1 = $_SESSION["yatzy"]->show();
- $savedDie = $_SESSION["yatzy"]->showSaved();
+$die1 = $_SESSION["yatzy"]->show();
+$savedDie = $_SESSION["yatzy"]->showSaved();
 $turn = $_SESSION["yatzy"]->getTurn();
 $score = $_SESSION["yatzy"]->getScore();
 
@@ -29,22 +29,33 @@ var_dump($_POST);
 </form>
 </p>
 
-<p><?= $savedDie ?></p>
-<p><?= $turn ?></p>
+<?php if (!isset($gameover)) : ?>
 
-<?php if (!isset($roundEnd)) : ?>
-<form  action="" method="post">
-    <input type="submit" name="roll" value="Roll!">
-</form>
-<?php endif; ?>
+    <p><?= $savedDie ?></p>
+    <p><?= $turn ?></p>
 
-
-
-<?php if (isset($roundEnd)) : ?>
-    <p><?= $roundEnd ?></p>
+    <?php if (!isset($roundEnd)) : ?>
     <form  action="" method="post">
-        <input type="submit" name="next" value="next">
+        <input type="submit" name="roll" value="Roll!">
     </form>
+    <?php endif; ?>
+
+
+
+
+
+
+    <?php if (isset($roundEnd)) : ?>
+        <p><?= $roundEnd ?></p>
+        <form  action="" method="post">
+            <input type="submit" name="next" value="next">
+        </form>
+    <?php endif; ?>
+
+    <?php if (isset($gameover)) : ?>
+        <p><?= $gameover ?></p>
+    <?php endif; ?>
+
 <?php endif; ?>
 
 <?php var_dump($score) ?>
