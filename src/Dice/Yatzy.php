@@ -17,7 +17,9 @@ class Yatzy
 {
     public $playerDiceHand;
     public array $savedDice = [];
+    public array $score = [];
     public int $throws = 0;
+    public int $turn = 0;
 
     const WINMESSAGE = "Time for the next round";
     const LOSEMESSAGE = "You lost! Better luck next time!";
@@ -34,18 +36,19 @@ class Yatzy
             "message" => "Good luck!",
         ];
 
-        if ($this->throws == 2) {
-            $data["roundEnd"] = self::WINMESSAGE;
-        }
-
-
         if (isset($_POST["roll"])) {
+            if ($this->throws == 2) {
+                $data["roundEnd"] = self::WINMESSAGE;
+            }
             $this->roll();
         }
 
         $data["player"] = $this->playerDiceHand->getLastSum();
 
         if (isset($_POST["save"])) {
+            if ($this->throws == 2) {
+                $data["roundEnd"] = self::WINMESSAGE;
+            }
             unset($_POST["save"]);
             foreach ($_POST as $key => $value) {
                array_push($this->savedDice, $value);
@@ -53,9 +56,11 @@ class Yatzy
            }
         }
 
-        if (isset($_POST["restart"])) {
-            $this->playerWins = 0;
-            $this->enemyWins = 0;
+        if (isset($_POST["next"])) {
+            $this->throws = 0;
+            $this->calcScore();
+            $this->playerDiceHand = new \viri19\Dice\DiceHand(5);
+            $this->savedDice = [];
         }
 
         return $data;
@@ -70,7 +75,12 @@ class Yatzy
 
     public function calcScore(): void
     {
-        
+        array_push($this->score, array_sum($this->savedDice));
+    }
+
+    public function getScore(): array
+    {
+        return $this->score;
     }
 
     public function show()

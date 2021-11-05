@@ -9,6 +9,7 @@ $message = $message ?? null;
  $die1 = $_SESSION["yatzy"]->show();
  $savedDie = $_SESSION["yatzy"]->showSaved();
 $turn = $_SESSION["yatzy"]->getTurn();
+$score = $_SESSION["yatzy"]->getScore();
 
 ?><h1><?= $header ?></h1>
 
@@ -41,7 +42,9 @@ var_dump($_POST);
 
 <?php if (isset($roundEnd)) : ?>
     <p><?= $roundEnd ?></p>
-    <form  action="play21" method="post">
+    <form  action="" method="post">
         <input type="submit" name="next" value="next">
     </form>
 <?php endif; ?>
+
+<?php var_dump($score) ?>
