@@ -17,9 +17,9 @@ class Yatzy
 {
     public $playerDiceHand;
     public array $savedDice = [];
-    public int $turn = 0;
+    public int $throws = 0;
 
-    const WINMESSAGE = "You win! Well played!";
+    const WINMESSAGE = "Time for the next round";
     const LOSEMESSAGE = "You lost! Better luck next time!";
 
     public function __construct(int $numberOfDie = 5)
@@ -34,9 +34,8 @@ class Yatzy
             "message" => "Good luck!",
         ];
 
-        if ($this->turn >= 3) {
-            $data["winner"] = self::WINMESSAGE;
-            return $data;
+        if ($this->throws == 2) {
+            $data["roundEnd"] = self::WINMESSAGE;
         }
 
 
@@ -65,8 +64,13 @@ class Yatzy
 
     public function roll(): void
     {
-        $this->turn++;
+        $this->throws++;
         $this->playerDiceHand->roll();
+    }
+
+    public function calcScore(): void
+    {
+        
     }
 
     public function show()
@@ -81,7 +85,7 @@ class Yatzy
 
     public function getTurn(): int
     {
-        return $this->turn;
+        return $this->throws;
     }
 
 

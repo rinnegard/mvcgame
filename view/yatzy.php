@@ -31,7 +31,7 @@ var_dump($_POST);
 <p><?= $savedDie ?></p>
 <p><?= $turn ?></p>
 
-<?php if (!isset($winner)) : ?>
+<?php if (!isset($roundEnd)) : ?>
 <form  action="" method="post">
     <input type="submit" name="roll" value="Roll!">
 </form>
@@ -39,10 +39,9 @@ var_dump($_POST);
 
 
 
-<?php if (isset($winner)) : ?>
-    <p><?= $winner ?></p>
+<?php if (isset($roundEnd)) : ?>
+    <p><?= $roundEnd ?></p>
     <form  action="play21" method="post">
-        <input type="submit" name="keepPlaying" value="Keep Playing">
-        <input type="submit" name="restart" value="Restart">
+        <input type="submit" name="next" value="next">
     </form>
 <?php endif; ?>
