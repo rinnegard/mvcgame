@@ -22,7 +22,7 @@ class Yatzy
     public int $turn = 0;
 
     const WINMESSAGE = "Time for the next round";
-    const LOSEMESSAGE = "You lost! Better luck next time!";
+    const LOSEMESSAGE = "The game is over.";
 
     public function __construct(int $numberOfDie = 5)
     {
@@ -66,6 +66,11 @@ class Yatzy
             $this->turn++;
             if ($this->turn == 6) {
                 $data["gameover"] = self::LOSEMESSAGE;
+                array_push($this->score, array_sum($this->score));
+                if ($this->score[6] >= 23) {
+                    array_push($this->score, 50);
+                }
+
             }
         }
 
