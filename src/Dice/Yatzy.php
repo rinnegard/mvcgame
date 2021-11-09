@@ -36,8 +36,6 @@ class Yatzy
             "message" => "Good luck!",
         ];
 
-
-
         if (isset($_POST["roll"])) {
             $this->roll();
             if ($this->throws >= 3) {
