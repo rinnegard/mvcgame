@@ -15,11 +15,11 @@ use function Mos\Functions\{
 
 class Yatzy
 {
-    public $playerDiceHand;
-    public array $savedDice = [];
-    public array $score = [];
-    public int $throws = 0;
-    public int $turn = 0;
+    private $playerDiceHand;
+    private array $savedDice = [];
+    private array $score = [];
+    private int $throws = 0;
+    private int $turn = 0;
 
     const WINMESSAGE = "Time for the next round";
     const LOSEMESSAGE = "The game is over.";
@@ -67,7 +67,7 @@ class Yatzy
             if ($this->turn == 6) {
                 $data["gameover"] = self::LOSEMESSAGE;
                 array_push($this->score, array_sum($this->score));
-                if ($this->score[6] >= 23) {
+                if ($this->score[6] >= 63) {
                     array_push($this->score, 50);
                 }
 

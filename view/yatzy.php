@@ -16,17 +16,16 @@ $score = $_SESSION["yatzy"]->getScore();
 
 <p><?= $message ?></p>
 
-<p>Select the dice you want to save.</p>
-<p>
-<form  action="" method="post">
-<?php foreach ($die1 as $key => $value): ?>
-    <input type="checkbox" name="<?= $key ?>" value="<?= $value->getFace() ?>"><?= $value->getFace(); ?></input>
-<?php endforeach; ?>
-    <input type="submit" name="save" value="Save">
-</form>
-</p>
-
 <?php if (!isset($gameover)) : ?>
+    <p>Select the dice you want to save.</p>
+    <p>
+        <form  action="" method="post">
+            <?php foreach ($die1 as $key => $value): ?>
+                <input type="checkbox" name="<?= $key ?>" value="<?= $value->getFace() ?>"><?= $value->getFace(); ?></input>
+            <?php endforeach; ?>
+            <input type="submit" name="save" value="Save">
+        </form>
+    </p>
 
     <p>You are currently looking for dice that show <?= $turn+1 ?></p>
     <p>You have <?= 3-$throws ?> throws remaining</p>
