@@ -1,0 +1,78 @@
+
+FILE: C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Controller\GameController.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 51 | ERROR | [x] The closing brace for the class must go on the next line
+    |       |     after the body
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+
+FILE: C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Controller\Yatzy.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 57 | ERROR | [x] The closing brace for the class must go on the next line
+    |       |     after the body
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+
+FILE: C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\DiceHand.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 58 | ERROR | [x] Line indented incorrectly; expected at least 8 spaces, found
+    |       |     7
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+
+FILE: C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Yatzy.php
+--------------------------------------------------------------------------------
+FOUND 8 ERRORS AFFECTING 6 LINES
+--------------------------------------------------------------------------------
+  56 | ERROR | [x] Line indented incorrectly; expected at least 16 spaces,
+     |       |     found 15
+  57 | ERROR | [x] Line indented incorrectly; expected at least 16 spaces,
+     |       |     found 15
+  58 | ERROR | [x] Line indented incorrectly; expected 12 spaces, found 11
+  58 | ERROR | [x] Closing brace indented incorrectly; expected 12 spaces,
+     |       |     found 11
+  73 | ERROR | [x] Blank line found at end of control structure
+  91 | ERROR | [x] Expected at least 1 space before "+"; 0 found
+  91 | ERROR | [x] Expected at least 1 space after "+"; 0 found
+ 125 | ERROR | [x] The closing brace for the class must go on the next line
+     |       |     after the body
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 8 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+
+FILE: C:\Users\victo\dbwebb-kurser\mvc\me\game\view\yatzy.php
+-------------------------------------------------------------------------
+FOUND 13 ERRORS AFFECTING 11 LINES
+-------------------------------------------------------------------------
+ 23 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+ 30 | ERROR | [x] Expected at least 1 space before "+"; 0 found
+ 30 | ERROR | [x] Expected at least 1 space after "+"; 0 found
+ 31 | ERROR | [x] Expected at least 1 space before "-"; 0 found
+ 31 | ERROR | [x] Expected at least 1 space after "-"; 0 found
+ 53 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+ 59 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+ 65 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+ 71 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+ 77 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+ 83 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+ 89 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+ 95 | ERROR | [x] Expected 1 space(s) after closing parenthesis; found 0
+-------------------------------------------------------------------------
+PHPCBF CAN FIX THE 13 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------
+
+Time: 1.02 secs; Memory: 6MB
+
