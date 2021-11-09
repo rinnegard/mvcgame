@@ -15,10 +15,6 @@ $score = $_SESSION["yatzy"]->getScore();
 
 <p><?= $message ?></p>
 
-<?php
-var_dump($_POST);
-?>
-
 <p>Select the dice you want to save.</p>
 <p>
 <form  action="" method="post">
@@ -39,23 +35,55 @@ var_dump($_POST);
         <input type="submit" name="roll" value="Roll!">
     </form>
     <?php endif; ?>
-
-
-
-
-
-
     <?php if (isset($roundEnd)) : ?>
         <p><?= $roundEnd ?></p>
         <form  action="" method="post">
             <input type="submit" name="next" value="next">
         </form>
     <?php endif; ?>
-
-    <?php if (isset($gameover)) : ?>
-        <p><?= $gameover ?></p>
-    <?php endif; ?>
-
 <?php endif; ?>
+<table>
+    <tr>
+        <th>Player</th>
+    </tr>
+    <tr>
+        <td>Ones</td>
+        <?php if (isset($score[0])): ?>
+            <td><?= $score[0] ?></td>
+        <?php endif; ?>
+    </tr>
+    <tr>
+        <td>Twoes</td>
+        <?php if (isset($score[1])): ?>
+            <td><?= $score[1] ?></td>
+        <?php endif; ?>
+    </tr>
+    <tr>
+        <td>Threes</td>
+        <?php if (isset($score[2])): ?>
+            <td><?= $score[2] ?></td>
+        <?php endif; ?>
+    </tr>
+    <tr>
+        <td>Fours</td>
+        <?php if (isset($score[3])): ?>
+            <td><?= $score[3] ?></td>
+        <?php endif; ?>
+    </tr>
+    <tr>
+        <td>Fives</td>
+        <?php if (isset($score[4])): ?>
+            <td><?= $score[4] ?></td>
+        <?php endif; ?>
+    </tr>
+    <tr>
+        <td>Sixes</td>
+        <?php if (isset($score[5])): ?>
+            <td><?= $score[5] ?></td>
+        <?php endif; ?>
+    </tr>
+</table>
 
-<?php var_dump($score) ?>
+<?php if (isset($gameover)) : ?>
+    <p><?= $gameover ?></p>
+<?php endif; ?>
