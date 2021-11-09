@@ -9,6 +9,7 @@ $message = $message ?? null;
 $die1 = $_SESSION["yatzy"]->show();
 $savedDie = $_SESSION["yatzy"]->showSaved();
 $turn = $_SESSION["yatzy"]->getTurn();
+$throws = $_SESSION["yatzy"]->getThrows();
 $score = $_SESSION["yatzy"]->getScore();
 
 ?><h1><?= $header ?></h1>
@@ -27,8 +28,8 @@ $score = $_SESSION["yatzy"]->getScore();
 
 <?php if (!isset($gameover)) : ?>
 
-    <p><?= $savedDie ?></p>
-    <p><?= $turn ?></p>
+    <p>You are currently looking for dice that show <?= $turn+1 ?></p>
+    <p>You have <?= 3-$throws ?> throws remaining</p>
 
     <?php if (!isset($roundEnd)) : ?>
     <form  action="" method="post">
@@ -43,8 +44,10 @@ $score = $_SESSION["yatzy"]->getScore();
     <?php endif; ?>
 <?php endif; ?>
 <table>
+    <caption>Scoreboard</caption>
     <tr>
         <th>Player</th>
+        <td>You</td>
     </tr>
     <tr>
         <td>Ones</td>
@@ -80,6 +83,18 @@ $score = $_SESSION["yatzy"]->getScore();
         <td>Sixes</td>
         <?php if (isset($score[5])): ?>
             <td><?= $score[5] ?></td>
+        <?php endif; ?>
+    </tr>
+    <tr>
+        <td>Sum</td>
+        <?php if (isset($score[6])): ?>
+            <td><?= $score[6] ?></td>
+        <?php endif; ?>
+    </tr>
+    <tr>
+        <td>Bonus</td>
+        <?php if (isset($score[7])): ?>
+            <td><?= $score[7] ?></td>
         <?php endif; ?>
     </tr>
 </table>

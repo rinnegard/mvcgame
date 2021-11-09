@@ -64,7 +64,7 @@ class Yatzy
             $this->playerDiceHand = new \viri19\Dice\DiceHand(5);
             $this->savedDice = [];
             $this->turn++;
-            if ($this->turn == 5) {
+            if ($this->turn == 6) {
                 $data["gameover"] = self::LOSEMESSAGE;
             }
         }
@@ -81,7 +81,13 @@ class Yatzy
 
     public function calcScore(): void
     {
-        array_push($this->score, array_sum($this->savedDice));
+        $diceSum = 0;
+        foreach ($this->savedDice as $value) {
+            if ($value == $this->turn+1) {
+                $diceSum = $diceSum + $value;
+            }
+        }
+        array_push($this->score, $diceSum);
     }
 
     public function getScore(): array
@@ -101,8 +107,14 @@ class Yatzy
 
     public function getTurn(): int
     {
+        return $this->turn;
+    }
+
+    public function getThrows(): int
+    {
         return $this->throws;
     }
+
 
 
 }
