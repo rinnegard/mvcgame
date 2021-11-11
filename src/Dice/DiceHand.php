@@ -38,23 +38,23 @@ class DiceHand
         return $this->numberOfDie;
     }
 
-    public function rollOnlyOne(int $die): void
-    {
-        $this->dice[$die]->roll();
-    }
+    // public function rollOnlyOne(int $die): void
+    // {
+    //     $this->dice[$die]->roll();
+    // }
 
-    public function getDie(int $die): object
-    {
-        return $this->dice[$die];
-    }
+    // public function getDie(int $die): object
+    // {
+    //     return $this->dice[$die];
+    // }
 
     public function getAllDice(): array
     {
         return $this->dice;
     }
 
-    public function removeDie(int $die): void
-    {
-        unset($this->dice[$die]);
-    }
+    // public function removeDie(int $die): void
+    // {
+    //     unset($this->dice[$die]);
+    // }
 }

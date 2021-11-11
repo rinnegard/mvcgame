@@ -26,5 +26,11 @@ class DiceHandTest extends TestCase
         $this->assertGreaterThan(6, $dicehand->getLastSum());
     }
 
+    public function testGetNumOfDie()
+    {
+        $dicehand = new DiceHand(10);
+        $this->assertEquals(10, $dicehand->getNumOfDie());
+    }
+
 
 }
