@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636596459">
-  <project timestamp="1636596459">
+<coverage generated="1636596716">
+  <project timestamp="1636596716">
     <file name="C:\Users\victo\dbwebb-kurser\mvc\me\game\config\bootstrap.php">
       <line num="10" type="stmt" count="1"/>
       <line num="11" type="stmt" count="1"/>
@@ -196,14 +196,14 @@
       <class name="viri19\Dice\Dice" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
-      <line num="14" type="stmt" count="6"/>
-      <line num="15" type="stmt" count="6"/>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="14" type="stmt" count="7"/>
+      <line num="15" type="stmt" count="7"/>
       <line num="17" type="method" name="roll" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="19" type="stmt" count="2"/>
       <line num="20" type="stmt" count="2"/>
-      <line num="22" type="method" name="getFace" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="24" type="stmt" count="3"/>
+      <line num="22" type="method" name="getFace" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="24" type="stmt" count="4"/>
       <metrics loc="26" ncloc="26" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
     </file>
     <file name="C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\DiceHand.php">
@@ -290,14 +290,14 @@
     </file>
     <file name="C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\GraphicalDice.php">
       <class name="viri19\Dice\GraphicalDice" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </class>
-      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="12" type="stmt" count="0"/>
-      <line num="13" type="stmt" count="0"/>
-      <line num="15" type="method" name="getImageClass" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <metrics loc="19" ncloc="19" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
+      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="15" type="method" name="getImageClass" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <metrics loc="19" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
     </file>
     <file name="C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Yatzy.php">
       <class name="viri19\Dice\Yatzy" namespace="global">
@@ -472,6 +472,6 @@
       <line num="213" type="stmt" count="2"/>
       <metrics loc="213" ncloc="139" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="57" coveredstatements="53" elements="57" coveredelements="53"/>
     </file>
-    <metrics files="18" loc="1102" ncloc="958" classes="15" methods="42" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="330" coveredstatements="126" elements="372" coveredelements="145"/>
+    <metrics files="18" loc="1102" ncloc="958" classes="15" methods="42" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="330" coveredstatements="129" elements="372" coveredelements="150"/>
   </project>
 </coverage>
