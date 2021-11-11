@@ -37,48 +37,92 @@ class Game
         ];
 
         if (isset($_POST["roll"])) {
-            $this->playerDiceHand->roll();
-            $this->playerSum += $this->playerDiceHand->getLastSum();
-
-            if ($this->playerSum === 21) {
-                $data["winner"] = self::WINMESSAGE;
-                $this->playerWins += 1;
-            } elseif ($this->playerSum > 21) {
-                $data["winner"] = self::LOSEMESSAGE;
-                $this->enemyWins += 1;
-            }
+            $this->roll();
+            // $this->playerDiceHand->roll();
+            // $this->playerSum += $this->playerDiceHand->getLastSum();
+            //
+            // if ($this->playerSum === 21) {
+            //     $data["winner"] = self::WINMESSAGE;
+            //     $this->playerWins += 1;
+            // } elseif ($this->playerSum > 21) {
+            //     $data["winner"] = self::LOSEMESSAGE;
+            //     $this->enemyWins += 1;
+            // }
         }
 
         if (isset($_POST["stay"])) {
-            $this->enemyRoll();
-
-            if ($this->enemySum > 21) {
-                $data["winner"] = self::WINMESSAGE;
-                $this->playerWins += 1;
-            } elseif ($this->enemySum === 21 || $this->enemySum > $this->playerSum) {
-                $data["winner"] = self::LOSEMESSAGE;
-                $this->enemyWins += 1;
-            }
+            $this->stay();
+            // $this->enemyRoll();
+            //
+            // if ($this->enemySum > 21) {
+            //     $data["winner"] = self::WINMESSAGE;
+            //     $this->playerWins += 1;
+            // } elseif ($this->enemySum === 21 || $this->enemySum > $this->playerSum) {
+            //     $data["winner"] = self::LOSEMESSAGE;
+            //     $this->enemyWins += 1;
+            // }
         }
 
         $data["player"] = $this->playerDiceHand->getLastSum();
         $data["enemy"] = $this->enemyDiceHand->getLastSum();
 
         if (isset($_POST["keepPlaying"]) || isset($_POST["restart"])) {
-            $this->playerSum = 0;
-            $this->enemySum = 0;
-            $data["player"] = 0;
-            $data["enemy"] = 0;
+            $this->reset();
+            // $this->playerSum = 0;
+            // $this->enemySum = 0;
+            // $data["player"] = 0;
+            // $data["enemy"] = 0;
         }
 
         if (isset($_POST["restart"])) {
-            $this->playerWins = 0;
-            $this->enemyWins = 0;
+            // $this->playerWins = 0;
+            // $this->enemyWins = 0;
         }
 
         // $body = renderView("layout/play21.php", $data);
         // sendResponse($body);
         return $data;
+    }
+
+    public function reset(): void
+    {
+        $this->playerSum = 0;
+        $this->enemySum = 0;
+        $data["player"] = 0;
+        $data["enemy"] = 0;
+    }
+
+    public function restart(): void
+    {
+        $this->playerWins = 0;
+        $this->enemyWins = 0;
+    }
+
+    public function roll(): void
+    {
+        $this->playerDiceHand->roll();
+        $this->playerSum += $this->playerDiceHand->getLastSum();
+
+        if ($this->playerSum === 21) {
+            $data["winner"] = self::WINMESSAGE;
+            $this->playerWins += 1;
+        } elseif ($this->playerSum > 21) {
+            $data["winner"] = self::LOSEMESSAGE;
+            $this->enemyWins += 1;
+        }
+    }
+
+    public function stay(): void
+    {
+        $this->enemyRoll();
+
+        if ($this->enemySum > 21) {
+            $data["winner"] = self::WINMESSAGE;
+            $this->playerWins += 1;
+        } elseif ($this->enemySum === 21 || $this->enemySum > $this->playerSum) {
+            $data["winner"] = self::LOSEMESSAGE;
+            $this->enemyWins += 1;
+        }
     }
 
     public function getPlayerSum(): int

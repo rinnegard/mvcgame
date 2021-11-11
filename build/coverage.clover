@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636596716">
-  <project timestamp="1636596716">
+<coverage generated="1636669265">
+  <project timestamp="1636669265">
     <file name="C:\Users\victo\dbwebb-kurser\mvc\me\game\config\bootstrap.php">
       <line num="10" type="stmt" count="1"/>
       <line num="11" type="stmt" count="1"/>
