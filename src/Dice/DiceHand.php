@@ -53,8 +53,8 @@ class DiceHand
         return $this->dice;
     }
 
-    // public function removeDie(int $die): void
-    // {
-    //     unset($this->dice[$die]);
-    // }
+    public function removeDie(int $die): void
+    {
+        unset($this->dice[$die]);
+    }
 }
