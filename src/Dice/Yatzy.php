@@ -51,9 +51,9 @@ class Yatzy
             }
             unset($_POST["save"]);
             foreach ($_POST as $key => $value) {
-               array_push($this->savedDice, $value);
-               $this->playerDiceHand->removeDie(intval($key));
-           }
+                array_push($this->savedDice, $value);
+                $this->playerDiceHand->removeDie(intval($key));
+            }
         }
 
         if (isset($_POST["next"])) {
@@ -68,7 +68,6 @@ class Yatzy
                 if ($this->score[6] >= 63) {
                     array_push($this->score, 50);
                 }
-
             }
         }
 
@@ -86,7 +85,7 @@ class Yatzy
     {
         $diceSum = 0;
         foreach ($this->savedDice as $value) {
-            if ($value == $this->turn+1) {
+            if ($value == $this->turn + 1) {
                 $diceSum = $diceSum + $value;
             }
         }
@@ -117,7 +116,4 @@ class Yatzy
     {
         return $this->throws;
     }
-
-
-
 }

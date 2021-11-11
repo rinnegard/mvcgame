@@ -20,15 +20,15 @@ $score = $_SESSION["yatzy"]->getScore();
     <p>Select the dice you want to save.</p>
     <p>
         <form  action="" method="post">
-            <?php foreach ($die1 as $key => $value): ?>
+            <?php foreach ($die1 as $key => $value) : ?>
                 <input type="checkbox" name="<?= $key ?>" value="<?= $value->getFace() ?>"><?= $value->getFace(); ?></input>
             <?php endforeach; ?>
             <input type="submit" name="save" value="Save">
         </form>
     </p>
 
-    <p>You are currently looking for dice that show <?= $turn+1 ?></p>
-    <p>You have <?= 3-$throws ?> throws remaining</p>
+    <p>You are currently looking for dice that show <?= $turn + 1 ?></p>
+    <p>You have <?= 3 - $throws ?> throws remaining</p>
 
     <?php if (!isset($roundEnd)) : ?>
     <form  action="" method="post">
@@ -50,49 +50,49 @@ $score = $_SESSION["yatzy"]->getScore();
     </tr>
     <tr>
         <td>Ones</td>
-        <?php if (isset($score[0])): ?>
+        <?php if (isset($score[0])) : ?>
             <td><?= $score[0] ?></td>
         <?php endif; ?>
     </tr>
     <tr>
         <td>Twoes</td>
-        <?php if (isset($score[1])): ?>
+        <?php if (isset($score[1])) : ?>
             <td><?= $score[1] ?></td>
         <?php endif; ?>
     </tr>
     <tr>
         <td>Threes</td>
-        <?php if (isset($score[2])): ?>
+        <?php if (isset($score[2])) : ?>
             <td><?= $score[2] ?></td>
         <?php endif; ?>
     </tr>
     <tr>
         <td>Fours</td>
-        <?php if (isset($score[3])): ?>
+        <?php if (isset($score[3])) : ?>
             <td><?= $score[3] ?></td>
         <?php endif; ?>
     </tr>
     <tr>
         <td>Fives</td>
-        <?php if (isset($score[4])): ?>
+        <?php if (isset($score[4])) : ?>
             <td><?= $score[4] ?></td>
         <?php endif; ?>
     </tr>
     <tr>
         <td>Sixes</td>
-        <?php if (isset($score[5])): ?>
+        <?php if (isset($score[5])) : ?>
             <td><?= $score[5] ?></td>
         <?php endif; ?>
     </tr>
     <tr>
         <td>Sum</td>
-        <?php if (isset($score[6])): ?>
+        <?php if (isset($score[6])) : ?>
             <td><?= $score[6] ?></td>
         <?php endif; ?>
     </tr>
     <tr>
         <td>Bonus</td>
-        <?php if (isset($score[7])): ?>
+        <?php if (isset($score[7])) : ?>
             <td><?= $score[7] ?></td>
         <?php endif; ?>
     </tr>

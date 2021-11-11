@@ -47,5 +47,4 @@ class GameController
             ->createResponse(200)
             ->withBody($psr17Factory->createStream($body));
     }
-
 }
