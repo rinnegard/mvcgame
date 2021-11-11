@@ -1,51 +1,5 @@
- ------ -------------------------------------------------------------------- 
- [32m Line [39m [32m src\Dice\Game.php                                                  [39m 
- ------ -------------------------------------------------------------------- 
-[39;49m  9      Used function Mos\Functions\redirectTo not found.[39;49m[39;49m                   [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  12     Used function Mos\Functions\sendResponse not found.[39;49m[39;49m                 [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
- ------ -------------------------------------------------------------------- 
 
- ------ -------------------------------------------------------------------- 
- [32m Line [39m [32m src\Dice\Yatzy.php                                                 [39m 
- ------ -------------------------------------------------------------------- 
-[39;49m  9      Used function Mos\Functions\redirectTo not found.[39;49m[39;49m                   [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  12     Used function Mos\Functions\sendResponse not found.[39;49m[39;49m                 [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
- ------ -------------------------------------------------------------------- 
-
- ------ -------------------------------------------------------------------- 
- [32m Line [39m [32m src\Router\Router.php                                              [39m 
- ------ -------------------------------------------------------------------- 
-[39;49m  9      Used function Mos\Functions\redirectTo not found.[39;49m[39;49m                   [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  12     Used function Mos\Functions\sendResponse not found.[39;49m[39;49m                 [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  29     Function Mos\Functions\sendResponse not found.[39;49m[39;49m                      [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  33     Function Mos\Functions\sendResponse not found.[39;49m[39;49m                      [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  37     Function Mos\Functions\redirectTo not found.[39;49m[39;49m                        [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  41     Function Mos\Functions\sendResponse not found.[39;49m[39;49m                      [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  49     Function Mos\Functions\sendResponse not found.[39;49m[39;49m                      [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  57     Function Mos\Functions\sendResponse not found.[39;49m[39;49m                      [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  67     Function Mos\Functions\sendResponse not found.[39;49m[39;49m                      [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  71     Function Mos\Functions\redirectTo not found.[39;49m[39;49m                        [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  94     Function Mos\Functions\sendResponse not found.[39;49m[39;49m                      [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
-[39;49m  103    Function Mos\Functions\sendResponse not found.[39;49m[39;49m                      [39;49m
-[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols  
- ------ -------------------------------------------------------------------- 
-
-[37;41m                                                                               [39;49m
-[37;41m [ERROR] Found 16 errors                                                       [39;49m
-[37;41m                                                                               [39;49m
+[30;42m                                                                               [39;49m
+[30;42m [OK] No errors                                                                [39;49m
+[30;42m                                                                               [39;49m
 

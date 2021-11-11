@@ -1,11 +1,12 @@
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Controller\GameController.php:39	Missing class import via use statement (line '39', column '37').
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Controller\Yatzy.php:45	Missing class import via use statement (line '45', column '38').
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\DiceHand.php:25	Avoid using viri19\Dice\count() function in for loops.
-C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:30	Missing class import via use statement (line '30', column '37').
-C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:31	Missing class import via use statement (line '31', column '36').
-C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:34	The method play() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
-C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Yatzy.php:29	Missing class import via use statement (line '29', column '37').
-C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Yatzy.php:62	Missing class import via use statement (line '62', column '41').
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:28	Missing class import via use statement (line '28', column '37').
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:29	Missing class import via use statement (line '29', column '36').
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:32	The method play() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Yatzy.php:27	Missing class import via use statement (line '27', column '37').
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Yatzy.php:60	Missing class import via use statement (line '60', column '41').
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:21	The method dispatch() has a Cyclomatic Complexity of 26. The configured cyclomatic complexity threshold is 10.
+C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:28	Avoid unused local variables such as '$body'.
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:75	Missing class import via use statement (line '75', column '41').
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:81	Missing class import via use statement (line '81', column '41').

@@ -6,10 +6,10 @@ namespace Mos\Router;
 
 use function Mos\Functions\{
     destroySession,
-    redirectTo,
+    //redirectTo,
     renderView,
     renderTwigView,
-    sendResponse,
+    //sendResponse,
     url
 };
 
@@ -26,19 +26,19 @@ class Router
                 "message" => "Hello, this is the index page, rendered as a layout.",
             ];
             $body = renderView("layout/page.php", $data);
-            sendResponse($body);
+            //sendResponse($body);
             return;
         } else if ($method === "GET" && $path === "/session") {
             $body = renderView("layout/session.php");
-            sendResponse($body);
+            //sendResponse($body);
             return;
         } else if ($method === "GET" && $path === "/session/destroy") {
             destroySession();
-            redirectTo(url("/session"));
+            //redirectTo(url("/session"));
             return;
         } else if ($method === "GET" && $path === "/debug") {
             $body = renderView("layout/debug.php");
-            sendResponse($body);
+            //sendResponse($body);
             return;
         } else if ($method === "GET" && $path === "/twig") {
             $data = [
@@ -46,7 +46,7 @@ class Router
                 "message" => "Hey, edit this to do it youreself!",
             ];
             $body = renderTwigView("index.html", $data);
-            sendResponse($body);
+            //sendResponse($body);
             return;
         } else if ($method === "GET" && $path === "/some/where") {
             $data = [
@@ -54,7 +54,7 @@ class Router
                 "message" => "Hey, edit this to do it youreself!",
             ];
             $body = renderView("layout/page.php", $data);
-            sendResponse($body);
+            //sendResponse($body);
             return;
         } else if ($method === "GET" && $path === "/form/view") {
             $data = [
@@ -64,11 +64,11 @@ class Router
                 "output" => $_SESSION["output"] ?? null,
             ];
             $body = renderView("layout/form.php", $data);
-            sendResponse($body);
+            //sendResponse($body);
             return;
         } else if ($method === "POST" && $path === "/form/process") {
             $_SESSION["output"] = $_POST["content"] ?? null;
-            redirectTo(url("/form/view"));
+            //redirectTo(url("/form/view"));
             return;
         } else if ($method === "GET" && $path === "/game/play21") {
             if (!isset($_SESSION["game"])) {
@@ -91,7 +91,7 @@ class Router
                 "message" => "Try to get to 21! But don't go over!",
             ];
             $body = renderView("layout/start21.php", $data);
-            sendResponse($body);
+            //sendResponse($body);
             return;
         }
 
@@ -100,6 +100,6 @@ class Router
             "message" => "The page you are requesting is not here. You may also checkout the HTTP response code, it should be 404.",
         ];
         $body = renderView("layout/page.php", $data);
-        sendResponse($body, 404);
+        //sendResponse($body, 404);
     }
 }
