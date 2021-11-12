@@ -12,31 +12,68 @@ use Psr\Http\Message\ResponseInterface;
  */
 class GameTest extends TestCase
 {
-
-    public function testCreateDiceClass()
+    public function testGameClass()
     {
-        $dicehand = new DiceHand();
-        $this->assertIsArray($dicehand->getAllDice());
+        $game = new Game();
+        $this->assertInstanceOf("viri19\Dice\Game", $game);
     }
 
-    public function testRollDice()
+    public function testGamePlayRoll()
     {
-        $dicehand = new DiceHand(6);
-        $dicehand->roll();
-        $this->assertGreaterThan(6, $dicehand->getLastSum());
+        $game = new Game();
+        $game->play("roll");
+        $this->assertGreaterThan(0, $game->getPlayerSum());
     }
 
-    public function testGetNumOfDie()
+    public function testGamePlayRollLose()
     {
-        $dicehand = new DiceHand(10);
-        $this->assertEquals(10, $dicehand->getNumOfDie());
+        $game = new Game();
+        for ($i=0; $i < 10; $i++) {
+            $data = $game->play("roll");
+        }
+
+        $this->assertArrayHasKey("winner", $data);
+
     }
 
-    public function testRemoveDie()
+    public function testGameStayLose()
     {
-        $dicehand = new DiceHand(10);
-        $dicehand->removeDie(5);
-        $this->assertEquals(9, count($dicehand->getAllDice()));
+        $game = new Game(1);
+        $game->play("roll");
+        $game->play("stay");
+
+        $this->assertEquals(1, $game->getEnemyWins());
+        $this->assertEquals(0, $game->getPlayerWins());
+    }
+
+    public function testGameStayWin()
+    {
+        $game = new Game(2);
+        for ($i=0; $i < 15; $i++) {
+            $game->play("stay");
+        }
+        $this->assertGreaterThan(0, $game->getPlayerWins());
+    }
+
+    public function testGameKeepPlaying()
+    {
+        $game = new Game();
+        $game->play("roll");
+        $game->play("stay");
+        $this->assertGreaterThan(0, $game->getPlayerSum());
+        $this->assertGreaterThan(0, $game->getEnemySum());
+        $game->play("keepPlaying");
+        $this->assertEquals(0, $game->getPlayerSum());
+        $this->assertEquals(0, $game->getEnemySum());
+    }
+
+    public function testGameRestart()
+    {
+        $game = new Game();
+        $game->play("stay");
+        $this->assertGreaterThan(0, $game->getEnemyWins());
+        $game->play("restart");
+        $this->assertEquals(0, $game->getEnemyWins());
     }
 
 }
