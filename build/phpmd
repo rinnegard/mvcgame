@@ -12,3 +12,4 @@ C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:21	The method dis
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:28	Avoid unused local variables such as '$body'.
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:75	Missing class import via use statement (line '75', column '41').
 C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Router\Router.php:81	Missing class import via use statement (line '81', column '41').
+C:\Users\victo\dbwebb-kurser\mvc\me\game\test\Dice\YatzyTest.php:90	Avoid unused local variables such as '$data'.

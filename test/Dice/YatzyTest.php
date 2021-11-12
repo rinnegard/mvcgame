@@ -76,4 +76,19 @@ class YatzyTest extends TestCase
         $dicehand = $yatzy->showSaved();
         $this->assertIsString($dicehand);
     }
+
+    /**
+     * @runInSeparateProcess
+     */
+    public function testYatzySaveDice()
+    {
+        session_start();
+        $_POST[1] = 1;
+        $yatzy = new Yatzy();
+        $yatzy->play("roll");
+        $before = count($yatzy->playerDiceHand->getAllDice());
+        $data = $yatzy->play("save");
+        $after = count($yatzy->playerDiceHand->getAllDice());
+        $this->assertEquals(1, $before - $after);
+    }
 }
