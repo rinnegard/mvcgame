@@ -28,12 +28,11 @@ class GameTest extends TestCase
     public function testGamePlayRollLose()
     {
         $game = new Game();
-        for ($i=0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $data = $game->play("roll");
         }
 
         $this->assertArrayHasKey("winner", $data);
-
     }
 
     public function testGameStayLose()
@@ -49,7 +48,7 @@ class GameTest extends TestCase
     public function testGameStayWin()
     {
         $game = new Game(2);
-        for ($i=0; $i < 20; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $game->play("stay");
         }
         $this->assertGreaterThan(0, $game->getPlayerWins());
@@ -75,5 +74,4 @@ class GameTest extends TestCase
         $game->play("restart");
         $this->assertEquals(0, $game->getEnemyWins());
     }
-
 }

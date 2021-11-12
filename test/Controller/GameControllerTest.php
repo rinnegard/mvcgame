@@ -23,4 +23,14 @@ class GameControllerTest extends TestCase
         $this->assertInstanceOf("Psr\Http\Message\ResponseInterface", $res);
     }
 
+    /**
+     * @runInSeparateProcess
+     */
+    public function testGameControllerInit()
+    {
+        session_start();
+        $gameController = new GameController();
+        $res = $gameController->init();
+        $this->assertInstanceOf("Psr\Http\Message\ResponseInterface", $res);
+    }
 }

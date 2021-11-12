@@ -21,7 +21,7 @@ class YatzyTest extends TestCase
     public function testYatzyPlayRoll()
     {
         $yatzy = new Yatzy();
-        for ($i=0; $i < 3; $i++) {
+        for ($i = 0; $i < 3; $i++) {
             $data = $yatzy->play("roll");
         }
         $this->assertGreaterThan(0, $yatzy->playerDiceHand->getLastSum());
@@ -31,7 +31,7 @@ class YatzyTest extends TestCase
     public function testYatzyPlaySave()
     {
         $yatzy = new Yatzy();
-        for ($i=0; $i < 3; $i++) {
+        for ($i = 0; $i < 3; $i++) {
             $data = $yatzy->play("roll");
         }
         $data = $yatzy->play("save");
@@ -41,7 +41,7 @@ class YatzyTest extends TestCase
     public function testYatzyPlayNext()
     {
         $yatzy = new Yatzy();
-        for ($i=0; $i < 2; $i++) {
+        for ($i = 0; $i < 2; $i++) {
             $yatzy->play("roll");
         }
         $this->assertEmpty($yatzy->getScore());
@@ -50,7 +50,7 @@ class YatzyTest extends TestCase
         $this->assertEquals(0, $yatzy->getThrows());
         $this->assertNotEmpty($yatzy->getScore());
         $this->assertequals(1, $yatzy->getTurn());
-        for ($i=0; $i < 4; $i++) {
+        for ($i = 0; $i < 4; $i++) {
             $data = $yatzy->play("next");
         }
         $yatzy->setScore([20, 20, 20, 20, 20]);
@@ -76,5 +76,4 @@ class YatzyTest extends TestCase
         $dicehand = $yatzy->showSaved();
         $this->assertIsString($dicehand);
     }
-
 }

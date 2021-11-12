@@ -18,5 +18,4 @@ class GraphicalDiceTest extends TestCase
         $dice = new GraphicalDice();
         $this->assertStringContainsString("dice-", $dice->getImageClass());
     }
-
 }

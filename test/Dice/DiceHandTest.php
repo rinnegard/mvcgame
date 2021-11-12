@@ -38,5 +38,4 @@ class DiceHandTest extends TestCase
         $dicehand->removeDie(5);
         $this->assertEquals(9, count($dicehand->getAllDice()));
     }
-
 }

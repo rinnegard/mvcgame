@@ -25,6 +25,4 @@ class DiceTest extends TestCase
         $dice->roll();
         $this->assertGreaterThan(0, $dice->getFace());
     }
-
-
 }

@@ -27,7 +27,7 @@ class Yatzy
         $this->playerDiceHand = new \viri19\Dice\DiceHand($numberOfDie);
     }
 
-    public function play($inp="doNothing"): array
+    public function play($inp = "doNothing"): array
     {
         $data = [
             "header" => "Play Yatzy!!",

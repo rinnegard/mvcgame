@@ -10,17 +10,20 @@ use Psr\Http\Message\ResponseInterface;
 class YatzyControllerTest extends TestCase
 {
 
-    public function testCreateYatzyControllerClass()
+    public function testYatzyControllerClass()
     {
         $gameController = new Yatzy();
         $this->assertInstanceOf("\Mos\Controller\Yatzy", $gameController);
     }
 
-    public function testCreateYatzyControllerStart()
+    /**
+     * @runInSeparateProcess
+     */
+    public function testYatzyControllerStart()
     {
-        $gameController = new GameController();
-        $res = $gameController->start();
+        session_start();
+        $gameController = new Yatzy();
+        $res = $gameController->init();
         $this->assertInstanceOf("Psr\Http\Message\ResponseInterface", $res);
     }
-
 }
