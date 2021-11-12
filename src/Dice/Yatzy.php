@@ -13,7 +13,7 @@ use function Mos\Functions\{
 
 class Yatzy
 {
-    private $playerDiceHand;
+    public $playerDiceHand;
     private array $savedDice = [];
     private array $score = [];
     private int $throws = 0;
@@ -27,23 +27,23 @@ class Yatzy
         $this->playerDiceHand = new \viri19\Dice\DiceHand($numberOfDie);
     }
 
-    public function play(): array
+    public function play($inp="doNothing"): array
     {
         $data = [
             "header" => "Play Yatzy!!",
             "message" => "Good luck!",
         ];
 
-        if (isset($_POST["roll"])) {
+        if (isset($_POST["roll"]) || $inp === "roll") {
             $this->roll();
             if ($this->throws >= 3) {
                 $data["roundEnd"] = self::WINMESSAGE;
             }
         }
 
-        $data["player"] = $this->playerDiceHand->getLastSum();
+        // $data["player"] = $this->playerDiceHand->getLastSum();
 
-        if (isset($_POST["save"])) {
+        if (isset($_POST["save"]) || $inp === "save") {
             if ($this->throws >= 3) {
                 $data["roundEnd"] = self::WINMESSAGE;
             }
@@ -54,7 +54,7 @@ class Yatzy
             }
         }
 
-        if (isset($_POST["next"])) {
+        if (isset($_POST["next"]) || $inp === "next") {
             $this->throws = 0;
             $this->calcScore();
             $this->playerDiceHand = new \viri19\Dice\DiceHand(5);
@@ -88,6 +88,11 @@ class Yatzy
             }
         }
         array_push($this->score, $diceSum);
+    }
+
+    public function setScore($score): void
+    {
+        $this->score = $score;
     }
 
     public function getScore(): array

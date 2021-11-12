@@ -15,22 +15,22 @@ use function Mos\Functions\{
 
 class Yatzy
 {
-    public function start(): ResponseInterface
-    {
-        $data = [
-            "header" => "Yatzy!!",
-            "message" => "Let's play!",
-            "action" => url("/yatzy"),
-            "output" => $_SESSION["output"] ?? null,
-        ];
-
-        $body = renderView("layout/yatzy.php", $data);
-
-        $psr17Factory = new Psr17Factory();
-        return $psr17Factory
-            ->createResponse(200)
-            ->withBody($psr17Factory->createStream($body));
-    }
+    // public function start(): ResponseInterface
+    // {
+    //     $data = [
+    //         "header" => "Yatzy!!",
+    //         "message" => "Let's play!",
+    //         "action" => url("/yatzy"),
+    //         "output" => $_SESSION["output"] ?? null,
+    //     ];
+    //
+    //     $body = renderView("layout/yatzy.php", $data);
+    //
+    //     $psr17Factory = new Psr17Factory();
+    //     return $psr17Factory
+    //         ->createResponse(200)
+    //         ->withBody($psr17Factory->createStream($body));
+    // }
 
     public function init(): ResponseInterface
     {

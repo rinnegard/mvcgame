@@ -49,7 +49,7 @@ class GameTest extends TestCase
     public function testGameStayWin()
     {
         $game = new Game(2);
-        for ($i=0; $i < 15; $i++) {
+        for ($i=0; $i < 20; $i++) {
             $game->play("stay");
         }
         $this->assertGreaterThan(0, $game->getPlayerWins());
