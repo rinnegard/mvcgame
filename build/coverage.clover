@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636686554">
-  <project timestamp="1636686554">
+<coverage generated="1636762560">
+  <project timestamp="1636762560">
     <file name="C:\Users\victo\dbwebb-kurser\mvc\me\game\config\bootstrap.php">
       <line num="10" type="stmt" count="1"/>
       <line num="11" type="stmt" count="1"/>
@@ -226,20 +226,20 @@
     </file>
     <file name="C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\Game.php">
       <class name="viri19\Dice\Game" namespace="global">
-        <metrics complexity="23" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="42" elements="49" coveredelements="49"/>
+        <metrics complexity="23" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="40" elements="49" coveredelements="46"/>
       </class>
       <line num="26" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
       <line num="28" type="stmt" count="8"/>
       <line num="29" type="stmt" count="8"/>
       <line num="30" type="stmt" count="8"/>
-      <line num="32" type="method" name="play" visibility="public" complexity="15" crap="15" count="7"/>
+      <line num="32" type="method" name="play" visibility="public" complexity="15" crap="15.07" count="7"/>
       <line num="35" type="stmt" count="7"/>
       <line num="39" type="stmt" count="7"/>
       <line num="40" type="stmt" count="4"/>
       <line num="41" type="stmt" count="4"/>
       <line num="43" type="stmt" count="4"/>
-      <line num="44" type="stmt" count="1"/>
-      <line num="45" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
       <line num="46" type="stmt" count="4"/>
       <line num="47" type="stmt" count="1"/>
       <line num="48" type="stmt" count="1"/>
@@ -277,7 +277,7 @@
       <line num="109" type="stmt" count="4"/>
       <line num="110" type="stmt" count="4"/>
       <line num="113" type="stmt" count="4"/>
-      <metrics loc="114" ncloc="112" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="42" elements="49" coveredelements="49"/>
+      <metrics loc="114" ncloc="112" classes="1" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="40" elements="49" coveredelements="46"/>
     </file>
     <file name="C:\Users\victo\dbwebb-kurser\mvc\me\game\src\Dice\GraphicalDice.php">
       <class name="viri19\Dice\GraphicalDice" namespace="global">
@@ -465,6 +465,6 @@
       <line num="213" type="stmt" count="2"/>
       <metrics loc="213" ncloc="139" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="57" coveredstatements="53" elements="57" coveredelements="53"/>
     </file>
-    <metrics files="18" loc="1107" ncloc="946" classes="15" methods="42" coveredmethods="40" conditionals="0" coveredconditionals="0" statements="323" coveredstatements="237" elements="365" coveredelements="277"/>
+    <metrics files="18" loc="1107" ncloc="946" classes="15" methods="42" coveredmethods="39" conditionals="0" coveredconditionals="0" statements="323" coveredstatements="235" elements="365" coveredelements="274"/>
   </project>
 </coverage>
